@@ -1,0 +1,1 @@
+Peter M. Fenwick. A new data structure for cumulative frequency tables. (A research paper)
