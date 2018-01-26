@@ -15,7 +15,7 @@ int binary_search(int arr[], int key) {
 
 int main() {
 	int arr[5] = {2, 5, 10, 20, 25};
-	for(int i = 0; i < 5; i++) cout << arr[i]<< ' ';
+	for(int i = 0; i < 5; i++) cout << arr[i] << ' ';
 	cout << endl;
 	cout << "0 is found at index " << binary_search(arr, 0) << endl;
 	cout << "2 is found at index " << binary_search(arr, 2) << endl;

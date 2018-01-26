@@ -20,7 +20,7 @@ int floor(int arr[], int key) {
 		else if(key == arr[mid]) l = mid;
 		else r = mid;
 	}
-	return l;                                   // important for last element  
+	return l;                                   // l will be equal to r at this point 
 }
 
 int main() {

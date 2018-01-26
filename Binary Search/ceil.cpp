@@ -4,7 +4,7 @@ using namespace std;
 
 /* finds index in arr where value is just less than equal to key
 if key is greater than max element, returns -1
- */
+*/
 
 int ceil(int arr[], int key) {
 	int l = 0, r = 6, mid;
@@ -20,7 +20,7 @@ int ceil(int arr[], int key) {
 		else if(key == arr[mid]) r = mid;
 		else l = mid;
 	}
-	return r;
+	return l;                                   // l will be equal to r at this point
 }
 
 int main() {
