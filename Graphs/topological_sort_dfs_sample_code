@@ -1,0 +1,24 @@
+/* dfs based topological sort implementation by Robert Endre Tarjan */
+
+vi ts; 								// global vector to store the topo sort in reverse order
+
+void dfs2(int u) { 						// different function name compared to the original dfs
+	dfs_num[u] = VISITED;
+	for (int j = 0; j < (int)AdjList[u].size(); j++) {
+		ii v = AdjList[u][j];
+		if (dfs_num[v.first] == UNVISITED) dfs2(v.first);
+	}
+	ts.push_back(u); }					// that’s it, this is the only change
+
+
+// inside int main()
+	ts.clear();
+	memset(dfs_num, UNVISITED, sizeof dfs_num);
+	for (int i = 0; i < V; i++)				// this part is the same as finding CCs
+		if (dfs_num[i] == UNVISITED) dfs2(i);
+							// alternative, call: reverse(ts.begin(), ts.end()); first
+	for (int i = (int)ts.size() - 1; i >= 0; i--)		// read backwards
+		printf(" %d", ts[i]);
+	printf("\n");
+							// For the sample graph in Figure 4.4, the output is like this:
+							// 7 6 0 1 2 5 3 4	(remember that there can be >= 1 valid toposort)
